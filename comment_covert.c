@@ -6,9 +6,9 @@ enum STATE state = NULL_STATE;
 
 void Do_C_State(FILE *fRead, FILE *fWrite)
 {
-	char first = 0;
-	char second = 0;
-	char third = 0;
+	int first = 0;
+	int second = 0;
+	int third = 0;
 	first = fgetc(fRead);
 	switch (first)
 	{
@@ -41,7 +41,6 @@ void Do_C_State(FILE *fRead, FILE *fWrite)
 			fputc(first, fWrite);
 			fputc(second, fWrite);
 			break;
-
 		}
 		break;
 		
@@ -54,7 +53,6 @@ void Do_C_State(FILE *fRead, FILE *fWrite)
 		state = END_STATE;
 		break;
 	default:
-		
 		fputc(first, fWrite);
 		break;
 
@@ -64,7 +62,7 @@ void Do_C_State(FILE *fRead, FILE *fWrite)
 
 void Do_CPP_State(FILE *fRead, FILE *fWrite)
 {
-	char first = 0;
+	int first = 0;
 	first = fgetc(fRead);
 	switch (first)
 	{
@@ -83,8 +81,8 @@ void Do_CPP_State(FILE *fRead, FILE *fWrite)
 
 void Do_Null_state(FILE *fRead, FILE *fWrite)
 {
-	char first = 0;
-	char second = 0;
+	int  first = 0;
+	int second = 0;
 	first = fgetc(fRead);
 	switch (first)
 	{
